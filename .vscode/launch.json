@@ -1,0 +1,53 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "app_agendamento",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev",
+                //"--dart-define-from-file=${cwd}/.env_hml.json",
+                // "--no-shrink"
+                // "--profile",
+                // "--release",
+                // "--multidex ",
+            ]
+        },
+        {
+            "name": "Prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+                "--flavor",
+                "prod",
+                //"--dart-define-from-file=${cwd}/.env_hml.json",
+            ]
+        }
+    ]
+}
+// HML
+// fvm flutter build apk -t lib/main_dev.dart --dart-define-from-file=.env_hml.json --flavor dev --release
+// fvm flutter build ios -t lib/main_dev.dart --dart-define-from-file=.env_hml.json --flavor dev --release
+// fvm flutter build ipa -t lib/main_dev.dart --dart-define-from-file=.env_hml.json --flavor dev --release
+// fvm flutter run -t lib/main_dev.dart --dart-define-from-file=.env_hml.json --flavor dev
+// prod
+// fvm flutter build apk -t lib/main_prod.dart --dart-define-from-file=.env_hml.json --flavor prod --release
+// fvm flutter build appbundle -t lib/main_prod.dart --dart-define-from-file=.env_hml.json --flavor prod --release
+// fvm flutter build ios -t lib/main_prod.dart --dart-define-from-file=.env_hml.json --flavor prod --release
+// fvm flutter build ipa -t lib/main_prod.dart --dart-define-from-file=.env_hml.json --flavor prod --release
+// fvm flutter run -t lib/main_prod.dart --dart-define-from-file=.env_hml.json --flavor prod
+// keytool \ -genkeypair \ -alias app-7Edu \ -keyalg RSA \ -keysize 2048 \ -validity 730 \ -storetype jks \ -dname 'CN=app-7Edu' \ -keystore key_store.jks
+// keytool -importkeystore -srckeystore key_store.jks -destkeystore key_store.jks -deststoretype pkcs12 -deststorepass nova_senha -srcalias alias_existente -destalias alias_novo
+// keytool -importkeystore -srckeystore key_store.jks -destkeystore key_store.jks -destalias app-7Edu -srcalias alias_existente
